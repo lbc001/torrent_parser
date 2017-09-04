@@ -73,13 +73,13 @@ class TorrentFileParser(object):
         (TYPE_STRING, STRING_INDICATOR),
     ]
 
-    def __init__(self, fp, use_ordered_dict=False, encoding='utf-8'):
+    def __init__(self, fp, use_ordered_dict=True, encoding='utf-8'):
         """
         :param fp: a **binary** file-like object to parse,
           which means need 'b' mode when use built-in open function
         :param encoding: file content encoding, default utf-8
         :param use_ordered_dict: Use collections.OrderedDict as dict container
-          default False, which mean use built-in dict
+          default True, which mean use built-in dict
         """
         if getattr(fp, 'read', ) is None \
                 or getattr(fp, 'seek') is None:
